@@ -1,0 +1,63 @@
+$main-hue: 160;
+$sec-hue: 191;
+$highlight-hue: 8;
+
+$highlight-bg-middle: hsla($highlight-hue,65%,55%,1);
+$highlight-bg-dark: hsla($highlight-hue,35%,50%,1);
+$highlight-bg-darker: hsla($highlight-hue,50%,40%,1);
+$highlight-shadow: hsla($highlight-hue,50%,40%,.1);
+
+$sec-bg-middle: hsla($sec-hue,15%,18%,1);
+$sec-bg-dark: hsla($sec-hue,15%,20%,1);
+$sec-bg-darker: hsla($sec-hue,10%,30%,1);
+$sec-bg-darkest: hsla($sec-hue,10%,5%,.2);
+
+$sec-shadow: linear-gradient(
+    hsla($sec-hue,20%,20%,.5) 70%,
+    hsla($sec-hue,25%,25%,.5)
+);
+
+$button-bg: hsla($sec-hue,52%,55%,1);
+$button-bg-off: hsla($sec-hue,30%,50%,1);
+$text-color-lt: hsla($sec-hue,80%,75%,1);
+$text-color-dark: hsla($sec-hue,20%,30%,1);
+$text-color-sat: hsla($sec-hue,60%,50%,1);
+
+@mixin label-text-dark {
+    color: $text-color-dark;
+}
+
+@mixin radio {
+    background-color: $button-bg-off;
+    box-shadow: inset 0 1px 0 0 hsla($sec-hue,30%,100%,.2),
+            inset 0 4px 0 0 hsla($sec-hue,30%,60%,.1),
+            inset 0 5px 0 0 hsla($sec-hue,60%,10%,.1),
+            inset 0 -1px 0 0 hsla($sec-hue,60%,10%,.5),
+            0 2px 0 0 hsla($sec-hue,30%,35%,1),
+            0 2px 0 1px hsla($sec-hue,10%,5%,.35);
+    position: relative;
+    top: 0;
+
+    &:checked {
+        background-color: $button-bg;
+        box-shadow: inset 0 -1px 0 0 hsla($sec-hue,100%,95%,.2),
+                0 0 3px 2px hsla($sec-hue,100%,50%,.25),
+                0 0 12px 6px hsla($sec-hue,100%,50%,.15),
+                0 0 0 1px hsla($sec-hue,10%,5%,.5);
+        top: 1px;
+    }
+}
+
+@mixin text-clip() {
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@mixin border-reset() {
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border-top-left-radius: 0px 0px;
+    border-top-right-radius: 0px 0px;    
+}

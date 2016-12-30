@@ -1,0 +1,100 @@
+@import "variables";
+
+.ctrl {
+    display: flex;
+    flex: 0 1 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ctrl--btn {
+    @extend .ctrl;
+    position: relative;
+}
+
+.ctrl--env {
+    @extend .ctrl;
+    width: auto;
+
+    @media (max-width: 1200px) {
+        width: 0;
+    }    
+}
+
+.ctrl--slider {
+    @extend .ctrl;
+
+    @media (max-width: 1200px) {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    &:first-child {
+        @media (max-height: 500px) {        
+            display: none;
+        }
+
+        @media (max-width: 500px) and (max-height: 360px) {        
+            display: none;
+        }
+    }
+
+    &:nth-of-type(2) {
+        @media (max-height: 360px) {        
+            display: none;
+        }
+
+        @media (max-width: 500px) and (max-height: 320px) {        
+            display: none;
+        }
+    }
+}
+
+.ctrl__label {
+    color: hsla($sec-hue,30%,55%,1);
+    flex: 0 1 20%;
+    text-shadow: 0 -1px 0 hsla($sec-hue,0%,10%,.5);
+}
+
+.ctrl__label--btn {
+    @extend .ctrl__label;
+    @include text-clip();
+    background-color: hsla($sec-hue,65%,75%,1);
+    font-weight: 900;
+    height: auto;
+    position: relative;
+    text-shadow: 0 -1px 0 hsla($sec-hue,15%,45%,.5),
+                 0 1px 0 hsla($sec-hue,0%,100%,.75);               
+    z-index: 9; 
+
+    @media (max-width: 1200px) {
+        line-height: 18px;
+    }    
+}
+
+.ctrl__label--btn--checked {
+    @extend .ctrl__label--btn;
+    background-color: hsla($sec-hue,75%,35%,.75);
+    text-shadow: 0 -1px 0 hsla($sec-hue,75%,35%,.5),
+                 0 1px 0 hsla($sec-hue,0%,100%,.75);
+}
+
+.ctrl__label--env {
+    @extend .ctrl__label;
+    align-self: center;
+    flex: 0 0 0;
+    line-height: 21px;
+
+    @media (max-width: 1200px) {
+        line-height: 24px;
+    }
+}
+
+.ctrl__label--slider {
+    @extend .ctrl__label;
+    height: auto;
+
+    @media (max-width: 1200px) {
+        flex: 0 1 20%;
+    }    
+}

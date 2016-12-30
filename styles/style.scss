@@ -1,0 +1,35 @@
+@import "reset";
+@import "variables";
+@import "btn";
+@import "ctrl";
+@import "ctrls";
+@import "ctrls__group";
+@import "display";
+@import "keys";
+@import "piano";
+@import "slider";
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    background-color: hsla(210,20%,15%,1);
+	color: hsla(191,35%,50%,1);
+    font: 600 1em/1.5 "Roboto", "Helvetica Neue", sans-serif;
+    letter-spacing: .08em;
+    padding: 4vh 2vw;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (max-height: 500px) {
+        padding: 0;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 0;
+    }
+}

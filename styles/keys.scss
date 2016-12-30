@@ -1,0 +1,128 @@
+@import "variables";
+
+.piano__keys {
+	background-clip: padding-box;
+	background-color: hsla(191,15%,15%,.65);
+	border-bottom: 2px solid hsla(191,25%,5%,.15);
+    border-bottom-left-radius: 12px 3px;
+    border-bottom-right-radius: 12px 3px;
+	border-top: 1px solid hsla(191,35%,65%,.15);
+	box-shadow: 0 1px 0 0 hsla(191,50%,50%,.2),
+                0 3px 0 0 hsla(191,25%,50%,.08);
+    display: flex;
+    flex: 1 1 auto;
+    height: 50%;
+    justify-content: center;
+    margin: -1vh 3px 3px;
+    padding: 0 0 0 2px;
+    width: auto;
+}
+
+.piano__keys--on {
+    @extend .piano__keys;
+    background-color: hsla(191,25%,25%,.5); 
+    border-bottom: 2px solid hsla(191,20%,20%,.25);
+    box-shadow: 0 1px 0 0 hsla(191,50%,60%,.25),
+                0 3px 3px 0 hsla(191,35%,75%,.15);              
+}
+
+.key {
+	background-clip: padding-box;
+	background-image: linear-gradient(
+			            -85deg,
+						hsla(180,3%,95%,1) 35%,
+						hsla(191,3%,92%,.65) 50%
+					),linear-gradient(
+			            85deg,
+						hsla(180,3%,95%,1) 35%,
+						hsla(191,3%,92%,.65) 50%
+					),linear-gradient(
+			            180deg,
+						hsla(8,3%,98%,.85),
+						hsla(8,3%,98%,.65),
+						hsla(8,3%,98%,.85)
+					);	
+	border: 1px solid hsla(191,24%,65%,.5);
+	border-bottom: none;
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+	border-bottom-left-radius: 4px 6px;
+	border-bottom-right-radius: 4px 6px;
+	box-shadow: inset 0 3px 1px 0 hsla(191,15%,25%,.25),
+				inset 0 3px 6px 0 hsla(191,25%,25%,.05), 
+                inset 0 -3px 0 0px hsla(191,35%,25%,.25),
+                inset 0 -4px 0 0 hsla(191,35%,100%,.5),
+				inset 0 -1px 0 2px hsla(191,35%,100%,1),
+                inset 0 -4px 0 0 hsla(191,35%,100%,1),
+                inset 0 12px 12px -12px hsla(191,15%,95%,.95),
+                0 6px 6px -6px hsla(191,15%,5%,.35);
+	flex: 0 0 60px;
+    margin: 0 0 0 -2px;
+	position: relative;
+    transform: translateZ(0);
+    transition: .1s linear;
+	z-index: 1;
+
+	&:hover {
+        background-image: linear-gradient(
+                        -85deg,
+                        hsla(180,3%,92%,1) 35%,
+                        hsla(191,3%,90%,.65) 50%
+                    ),linear-gradient(
+                        85deg,
+                        hsla(180,3%,92%,1) 35%,
+                        hsla(191,3%,90%,.65) 50%
+                    ),linear-gradient(
+                        180deg,
+                        hsla(8,3%,95%,.85),
+                        hsla(8,3%,95%,.65),
+                        hsla(8,3%,95%,.85)
+                    );    
+        border-radius: 0 0 4px 4px;              
+        box-shadow: 
+                inset 0 -1px 1px 0px hsla(191,35%,100%,1),
+                inset 1px 0 0 0 hsla(191,35%,25%,.25),
+                inset -1px 0 0 0 hsla(191,35%,25%,.25),
+                inset 0 -1px 0 0 hsla(191,35%,25%,.5),
+                0 6px 6px -6px hsla(191,15%,5%,.5);
+        transition: .1s linear;
+	}
+}
+
+.key.black {
+	background-color: hsla(8,3%,16%,1);
+	background-image: linear-gradient(
+                        0deg,
+                        hsla(8,3%,50%,0) 12px,
+                        hsla(8,3%,50%,.5) 20px,
+                        hsla(8,6%,8%,0) 20px, 
+                        hsla(8,6%,8%,.35) 30px
+					);
+	border: none;
+	border-bottom-left-radius: 4px 2vh;
+	border-bottom-right-radius: 4px 2vh;
+	box-shadow: inset 3px 0 0 0 hsla(8,3%,8%,.5),
+				inset -3px 0 0 0 hsla(8,3%,8%,.5),
+				inset 0 -30px 0 -12px hsla(8,3%,24%,.35),
+				inset 0 -12px 6px 6px hsla(8,3%,12%,1),
+				0 5px 2px -2px hsla(8,3%,32%,.5);
+	flex: 0 0 36px;
+    height: 63.81%;
+	margin: 0 -20px 0 -16px;
+	z-index: 2;
+
+	&:hover {
+		background-color: hsla(8,3%,12%,1);
+		background-image: none;
+        border-bottom-left-radius: 2px 2vh;
+        border-bottom-right-radius: 2px 2vh;
+		box-shadow: inset 0 6px 0 3px hsla(8,3%,8%,.65),
+				inset 3px 0 0 0 hsla(8,3%,10%,.5),
+				inset -3px 0 0 0 hsla(8,3%,10%,.5),
+				inset 0 -24px 0 -12px hsla(8,3%,35%,.2),
+				inset 0 -30px 0 -12px hsla(8,3%,35%,.1),
+				inset 0 -12px 0 6px hsla(8,3%,10%,1),
+				0 6px 0 -2px hsla(8,3%,32%,.18);
+        transition: .05s linear;    
+	}	
+}

@@ -1,0 +1,89 @@
+@import "variables";
+
+.ctrls__group {
+    border-radius: 1px;
+    display: flex;
+    flex: 1 1 100%; 
+    width: auto;
+}
+
+.ctrls__group--btn {
+    @extend .ctrls__group;
+    margin: 3px 0 6px;
+
+    @media (max-width: 1200px) {
+        margin: 0;
+    }    
+
+    .ctrls__col:first-of-type & {
+        @media (max-width: 900px) {
+            &:last-of-type {
+                @media (max-height: 500px) {
+                    display: none;
+                }
+            }
+
+            &:nth-of-type(2) {
+                @media (max-height: 300px) {
+                    display: none;
+                }
+            }        
+        }
+    }
+}
+
+.ctrls__group--env {
+    @extend .ctrls__group;
+    flex-direction: column;
+
+    @media (max-width: 1200px) {
+        flex-direction: row;
+    }     
+}
+
+.ctrls__group--slider {
+    @extend .ctrls__group;
+    flex-direction: column;
+}
+
+.ctrls__group__list {
+    display: flex;
+    flex: 0 1 100%; 
+    width: auto;
+}
+
+.ctrls__group__list--btn {
+    @extend .ctrls__group__list;
+}    
+
+.ctrls__group__list--env {
+    @extend .ctrls__group__list;
+}
+
+.ctrls__group__title {
+    @include text-clip();
+    align-self: center;
+    background-color: hsla($sec-hue,10%,10%,1);
+    flex: 0 1 25%;
+    height: auto;
+    text-shadow: 0 1px 1px hsla($sec-hue,30%,60%,.1);
+    width: auto;
+
+    @media (max-width: 650px) and (max-height: 460px) {
+        display: none;
+    }
+}
+
+.ctrls__group__title--env {
+    @extend .ctrls__group__title;
+    align-self: center;
+    flex: 0 0 24px;
+    line-height: 24px;
+    margin-top: 6px;
+    padding-bottom: 6px;
+
+    @media (max-width: 1200px) {
+        flex: 0 1 25%;
+        padding-bottom: 0;
+    }
+}
